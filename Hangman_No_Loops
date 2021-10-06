@@ -1,0 +1,397 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    //variables
+    string word;
+    string guessWord;
+    char letter0 = '-';
+    char letter1 = '-';
+    char letter2 = '-';
+    char letter3 = '-';
+    char letter4 = '-';
+    char one;
+    char two;
+    char three;
+    char four;
+    char five;
+    
+    
+    //=======================================================================
+    //
+    //User enters word
+    //
+    //=======================================================================
+    
+    
+    
+    cout << "Welcome to Hangman! Please enter a FIVE LETTER word: ";
+    getline(cin, word);
+
+    
+    //word length check
+    if (word.length() != 5)
+    {
+        cout << "You need to enter a FIVE letter word." << endl;
+        getline(cin, word);
+    }
+    
+    
+    //force lower case
+    word.at(0) = tolower(word.at(0));
+    word.at(1) = tolower(word.at(1));
+    word.at(2) = tolower(word.at(2));
+    word.at(3) = tolower(word.at(3));
+    word.at(4) = tolower(word.at(4));
+
+
+
+    //=======================================================================
+    //
+    //FIRST guess
+    //
+    //=======================================================================
+    
+    
+    
+
+    cout << "Enter your first guess ";
+    cin >> one;
+    one = tolower(one);
+    
+    
+    //checks guess against word positions, then flips bool to true
+    if (one == word.at(0))
+    {
+        cout << "You have guessed the first letter." << endl;
+        letter0 = one;
+    }
+    if (one == word.at(1))
+    {
+        cout << "You have guessed the second letter." << endl;
+        letter1 = one;
+    }
+    if (one == word.at(2))
+    {
+        cout << "You have guessed the third letter." << endl;
+        letter2 = one;
+    }
+    if (one == word.at(3))
+    {
+        cout << "You have guessed the fourth letter." << endl;
+        letter3 = one;
+    }
+    if (one == word.at(4))
+    {
+        cout << "You have guessed the fifth letter." << endl;
+        letter4 = one;
+    }
+    
+    
+    //display game board before the user guesses the word
+    cout << letter0 << letter1 << letter2 << letter3 << letter4 << endl;
+    
+    
+    //guess word
+    cout << "Try guessing the word: ";
+    cin.ignore();
+    getline(cin, guessWord);
+    
+    if (guessWord == word)
+    {
+        cout << "Congratulations you win!" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "Incorrect guess, try again." << endl;
+        cout << "You have 4 guesses left." << endl << endl;
+    }
+    
+    
+    
+    //=======================================================================
+    //
+    //SECOND guess
+    //
+    //=======================================================================
+    
+    
+    
+    
+    cout << "Enter your second guess ";
+    cin >> two;
+    
+    if (two == one)
+    {
+        cout << "You've already guessed " << two << ". Try again." << endl;
+        cout << "Enter your second guess: ";
+        cin >> two;
+    }
+    
+    //forces lower case
+    two = tolower(two);
+    
+    //checks guess against word positions, then assigns the 
+    //guessed letter to the position variable.
+    if (two == word.at(0))
+    {
+        cout << "You have guessed the first letter." << endl;
+        letter0 = two;
+    }
+    if (two == word.at(1))
+    {
+        cout << "You have guessed the second letter." << endl;
+        letter1 = two;
+    }
+    if (two == word.at(2))
+    {
+        cout << "You have guessed the third letter." << endl;
+        letter2 = two;
+    }
+    if (two == word.at(3))
+    {
+        cout << "You have guessed the fourth letter." << endl;
+        letter3 = two;
+    }
+    if (two == word.at(4))
+    {
+        cout << "You have guessed the fifth letter." << endl;
+        letter4 = two;
+    }
+    
+    
+    //display game board before the user guesses the word
+    cout << letter0 << letter1 << letter2 << letter3 << letter4 << endl;
+    
+    
+    //guess word
+    cout << "Try guessing the word: ";
+    cin.ignore();
+    getline(cin, guessWord);
+    
+    if (guessWord == word)
+    {
+        cout << "Congratulations you win!" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "Incorrect guess, try again." << endl;
+        cout << "You have 3 guesses left." << endl << endl;
+    }
+    
+    
+    
+    //=======================================================================
+    //
+    //THIRD guess
+    //
+    //=======================================================================
+    
+    
+    
+    
+    cout << "Enter your third guess ";
+    cin >> three;
+    
+    if (three == one || three == two)
+    {
+        cout << "You've already guessed " << three << ". Try again." << endl;
+        cout << "Enter your second guess: ";
+        cin >> three;
+    }
+    //forces lower case
+    three = tolower(three);
+    
+    //checks guess against word positions, then flips bool to true
+    if (three == word.at(0))
+    {
+        cout << "You have guessed the first letter." << endl;
+        letter0 = three;
+    }
+    if (three == word.at(1))
+    {
+        cout << "You have guessed the second letter." << endl;
+        letter1 = three;
+    }
+    if (three == word.at(2))
+    {
+        cout << "You have guessed the third letter." << endl;
+        letter2 = three;
+    }
+    if (three == word.at(3))
+    {
+        cout << "You have guessed the fourth letter." << endl;
+        letter3 = three;
+    }
+    if (three == word.at(4))
+    {
+        cout << "You have guessed the fifth letter." << endl;
+        letter4 = three;
+    }
+    
+    
+    //display game board before the user guesses the word
+    cout << letter0 << letter1 << letter2 << letter3 << letter4 << endl;
+    
+    
+    //guess word
+    cout << "Try guessing the word: ";
+    cin.ignore();
+    getline(cin, guessWord);
+    
+    if (guessWord == word)
+    {
+        cout << "Congratulations you win!" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "Incorrect guess, try again." << endl;
+        cout << "You have 2 guesses left." << endl << endl;
+    }
+    
+    
+    
+    //=======================================================================
+    //
+    //THIRD guess
+    //
+    //=======================================================================
+    
+    
+    
+    
+    cout << "Enter your fourth guess ";
+    cin >> four;
+    
+    if (four == one || four == two || four == three)
+    {
+        cout << "You've already guessed " << four << ". Try again." << endl;
+        cout << "Enter your second guess: ";
+        cin >> four;
+    }
+    //forces lower case
+    four = tolower(four);
+    
+    //checks guess against word positions, then flips bool to true
+    if (four == word.at(0))
+    {
+        cout << "You have guessed the first letter." << endl;
+        letter0 = four;
+    }
+    if (four == word.at(1))
+    {
+        cout << "You have guessed the second letter." << endl;
+        letter1 = four;
+    }
+    if (four == word.at(2))
+    {
+        cout << "You have guessed the third letter." << endl;
+        letter2 = four;
+    }
+    if (four == word.at(3))
+    {
+        cout << "You have guessed the fourth letter." << endl;
+        letter3 = four;
+    }
+    if (four == word.at(4))
+    {
+        cout << "You have guessed the fifth letter." << endl;
+        letter4 = four;
+    }
+    
+    
+    //display game board before the user guesses the word
+    cout << letter0 << letter1 << letter2 << letter3 << letter4 << endl;
+    
+    
+    //guess word
+    cout << "Try guessing the word: ";
+    cin.ignore();
+    getline(cin, guessWord);
+    
+    if (guessWord == word)
+    {
+        cout << "Congratulations you win!" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "Incorrect guess, try again." << endl;
+        cout << "You have 1 guesses left." << endl << endl;
+    }
+    
+    
+    
+    //=======================================================================
+    //
+    //FIFTH guess
+    //
+    //=======================================================================
+    
+    
+    
+    cout << "Enter your fifth guess ";
+    cin >> five;
+    
+    if (five == one || five == two || five == three || five == four)
+    {
+        cout << "You've already guessed " << five << ". Try again." << endl;
+        cout << "Enter your second guess: ";
+        cin >> five;
+    }
+    //forces lower case
+    five = tolower(five);
+    
+    //checks guess against word positions, then flips bool to true
+    if (five == word.at(0))
+    {
+        cout << "You have guessed the first letter." << endl;
+        letter0 = five;
+    }
+    if (five == word.at(1))
+    {
+        cout << "You have guessed the second letter." << endl;
+        letter1 = five;
+    }
+    if (five == word.at(2))
+    {
+        cout << "You have guessed the third letter." << endl;
+        letter2 = five;
+    }
+    if (five == word.at(3))
+    {
+        cout << "You have guessed the fourth letter." << endl;
+        letter3 = five;
+    }
+    if (five == word.at(4))
+    {
+        cout << "You have guessed the fifth letter." << endl;
+        letter4 = five;
+    }
+    
+    
+    //display game board before the user guesses the word
+    cout << letter0 << letter1 << letter2 << letter3 << letter4 << endl;
+    
+    
+    //guess word
+    cout << "Try guessing the word: ";
+    cin.ignore();
+    getline(cin, guessWord);
+    
+    if (guessWord == word)
+    {
+        cout << "Congratulations you win!" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "Incorrect guess. Try again later." << endl;
+        return 0;
+    }
