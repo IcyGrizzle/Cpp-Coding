@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Grizzle1917
-- 👀 I’m interested in ...programming
-- 🌱 I’m currently learning ...C++
-- 💞️ I’m looking to collaborate on ...
+- 👀 I’m interested in ...programming, game development, application development
+- 🌱 I’m currently learning ...C++ & C#
+- 💞️ I’m looking to collaborate on ...basic/intermediate C++
 - 📫 How to reach me ...
 
 <!---
